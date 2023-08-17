@@ -1,5 +1,7 @@
 # Shapes_Photo_Album
 This is a project that implemented the concepts of Object-Oriented Programming and MVC using Java and Html. The controller takes inputs from local text file and displays the image through viewer.
+## Model
+A good model should have only one class connects to the controller, so I created a ShapeModel class to summarize the methods. The shape model has the method of creating photo, move/resize/recolor, reset, getShapes, snapshot, and potentially two toString method. Everytime the class snapshot is called, it will return the current list of shapes by creating a new list, so it doesn't modify the shapes list. the getShapeString is the toString method for shapes whereas the actual toString method is for the snapshot list.
  ## Controller
 For a MVC structure, there has to be a controller as well as model. What I had in mind was to draw the shapes on a canvas according to the shape info in snapshot lists, then save them as images, then in another class I extract the images from the folder that saved them to display in the pop-up window and html. Therefore, I wrote the controller class to loop over each snapshot, create a new canvas for this snapshot and then loop over each shape in this snapshot and draw it on the canvas, finally save the canvas to a file with a filename based on the snapshot timestamp.
 
